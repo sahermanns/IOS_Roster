@@ -2,19 +2,20 @@
 //  Person.swift
 //  ClassRoster
 //
-//  Created by Sarah Hermanns on 2/19/15.
-//  Copyright (c) 2015 SASH. All rights reserved.
+//  Created by Bradley Johnson on 2/19/15.
+//  Copyright (c) 2015 BPJ. All rights reserved.
 //
 
 import Foundation
 
 class Person {
   
-  let firstName = "Sarah"
-  let lastName = "Hermanns"
+  let firstName = "John"
+  let lastName = "Doe"
   
-  init(first: String, last: String){
-    self.firstName = first;
-    self.lastName = last;
+  init(firstName : String, lastName : String) {
+    self.firstName = firstName
+    self.lastName = lastName
   }
+  
 }
