@@ -13,6 +13,9 @@
 		3E74AF511A945133000D0330 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E74AF501A945133000D0330 /* Images.xcassets */; };
 		3E74AF541A945133000D0330 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E74AF521A945133000D0330 /* LaunchScreen.xib */; };
 		3E74AF601A945133000D0330 /* ClassRosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E74AF5F1A945133000D0330 /* ClassRosterTests.swift */; };
+		3E74AF6A1A96CE53000D0330 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E74AF691A96CE53000D0330 /* Person.swift */; };
+		3E74AF6C1A96E617000D0330 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E74AF6B1A96E617000D0330 /* Controller.swift */; };
+		3E74AFA61AA3D68D000D0330 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E74AFA51AA3D68D000D0330 /* PersonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		3E74AF591A945133000D0330 /* ClassRosterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassRosterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E74AF5E1A945133000D0330 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E74AF5F1A945133000D0330 /* ClassRosterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRosterTests.swift; sourceTree = "<group>"; };
+		3E74AF691A96CE53000D0330 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		3E74AF6B1A96E617000D0330 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		3E74AFA51AA3D68D000D0330 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				3E74AF491A945133000D0330 /* AppDelegate.swift */,
-				3E74AF4B1A945133000D0330 /* ViewController.swift */,
-				3E74AF4D1A945133000D0330 /* Main.storyboard */,
+				3E74AF701A96E678000D0330 /* View */,
+				3E74AF6D1A96E62F000D0330 /* Controller */,
 				3E74AF501A945133000D0330 /* Images.xcassets */,
 				3E74AF521A945133000D0330 /* LaunchScreen.xib */,
 				3E74AF471A945133000D0330 /* Supporting Files */,
@@ -110,6 +116,33 @@
 				3E74AF5E1A945133000D0330 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E74AF6D1A96E62F000D0330 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3E74AF6B1A96E617000D0330 /* Controller.swift */,
+				3E74AF6E1A96E646000D0330 /* Model */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3E74AF6E1A96E646000D0330 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E74AF691A96CE53000D0330 /* Person.swift */,
+				3E74AFA51AA3D68D000D0330 /* PersonDetailViewController.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3E74AF701A96E678000D0330 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E74AF4D1A945133000D0330 /* Main.storyboard */,
+				3E74AF4B1A945133000D0330 /* ViewController.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E74AF6A1A96CE53000D0330 /* Person.swift in Sources */,
+				3E74AFA61AA3D68D000D0330 /* PersonDetailViewController.swift in Sources */,
 				3E74AF4C1A945133000D0330 /* ViewController.swift in Sources */,
 				3E74AF4A1A945133000D0330 /* AppDelegate.swift in Sources */,
+				3E74AF6C1A96E617000D0330 /* Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +441,7 @@
 				3E74AF651A945133000D0330 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E74AF661A945133000D0330 /* Build configuration list for PBXNativeTarget "ClassRosterTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +450,7 @@
 				3E74AF681A945133000D0330 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
