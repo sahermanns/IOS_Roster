@@ -14,7 +14,7 @@ class PersonDetailViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.title = self.selectedPerson.firstName
+    self.title = self.selectedPerson.firstName + " " + self.selectedPerson.lastName
   }
   
   override func didReceiveMemoryWarning() {
