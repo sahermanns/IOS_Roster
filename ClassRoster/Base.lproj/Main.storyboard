@@ -64,6 +64,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6D-Ju-zfm">
                                 <rect key="frame" x="255" y="72" width="91.5" height="30"/>
+                                <color key="textColor" red="0.15218014099999999" green="0.75037484219999995" blue="0.50215475899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -73,7 +74,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="w6D-Ju-zfm" secondAttribute="centerX" id="6au-Yp-rpL"/>
                             <constraint firstAttribute="centerX" secondItem="xyo-Ym-Xfo" secondAttribute="centerX" id="WoV-GU-17t"/>
@@ -81,6 +82,10 @@
                             <constraint firstItem="xyo-Ym-Xfo" firstAttribute="top" secondItem="w6D-Ju-zfm" secondAttribute="bottom" constant="8" id="c6B-uY-1hc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstNameLabel" destination="w6D-Ju-zfm" id="jmO-lY-N2y"/>
+                        <outlet property="lastNameLabel" destination="xyo-Ym-Xfo" id="oqX-gb-NG8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nk0-C2-S40" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
