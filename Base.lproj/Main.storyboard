@@ -59,7 +59,6 @@
                                         <connections>
                                             <outlet property="personFirstLabel" destination="ynl-ES-gaN" id="SVX-BZ-xuB"/>
                                             <outlet property="personImageView" destination="7PH-3E-BK0" id="22o-Ev-nK4"/>
-                                            <outlet property="personLabel" destination="ynl-ES-gaN" id="5ID-Qh-rMN"/>
                                             <outlet property="personLastLabel" destination="DvV-Pr-9op" id="6VG-F3-yT6"/>
                                             <segue destination="0Ju-hs-jPD" kind="show" identifier="ShowGreen" id="Rsf-hP-Jfc"/>
                                         </connections>

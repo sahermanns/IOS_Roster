@@ -15,13 +15,42 @@ class ViewController: UIViewController, UITableViewDataSource {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    if let filePath = NSBundle.mainBundle().pathForResource("People", ofType: "plist"){
-    println(filePath)
-    if let plistArray = NSArray(contentsOfFile: filePath){
-      println(plistArray.count)
-    }
-    }
+    let userDefaults = NSUserDefaults.standardUserDefaults()
     
+    if let count = userDefaults.objectForKey("launchCount") as? Int {
+      let newCount = count+1
+      userDefaults.setObject(newCount, forKey:"launchCount")
+    } else {
+      println("first launch!")
+      let count = 1
+      userDefaults .setObject(count, forKey:"launchCount")
+    }
+    userDefaults.synchronize()
+    
+    self.loadFromArchive()
+    
+    
+    if self.group.isEmpty {
+    if let filePath = NSBundle.mainBundle().pathForResource("People", ofType: "plist") {
+        
+      if let plistArray = NSArray(contentsOfFile: filePath) {
+          //println(plistArray.count)
+        for personObject in plistArray {
+          if let personDictionary = personObject as? NSDictionary {
+            let firstName = personDictionary["firstName"] as String
+            let lastName = personDictionary["lastName"] as String
+            let person = Person(firstName: firstName, lastName: lastName)
+            self.group.append(person)
+            }
+          }
+        
+        } else {
+          
+        }
+        
+    }
+    self.saveToArchive()
+    }
 //    var sarah = Person(firstName: "Sarah", lastName: "Hermanns")
 //    var kara = Person(firstName: "Kara", lastName: "Fortney")
 //    var megan = Person(firstName: "Megan", lastName: "Miller")
@@ -42,19 +71,39 @@ class ViewController: UIViewController, UITableViewDataSource {
 //    self.group.append(beccah)
 //    self.group.append(whitney)
     
-    self.tableView.dataSource = self
     
+    self.tableView.dataSource = self
   }
-  
+
+  func loadFromArchive() {
+    let path = getDocumentsPath()
+    if let arrayFromArchive = NSKeyedUnarchiver.unarchiveObjectWithFile(path + "/MyArchive") as? [Person] {
+       self.group = arrayFromArchive
+    }
+  }
+
+  func saveToArchive() {
+    let path = self.getDocumentsPath()
+    println(path)
+    NSKeyedArchiver.archiveRootObject(self.group, toFile: path + "/MyArchive")
+  }
+
+  func getDocumentsPath() -> String {
+    let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+    let path = paths.first as String
+    return path
+  }
+
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
+    self.saveToArchive()
     self.tableView.reloadData()
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.group.count
   }
-  
+
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as PersonCell
     let personToDisplay = self.group[indexPath.row]
@@ -70,7 +119,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     return cell
   }
 
-  
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "ShowGreen" {
       let destinationVC = segue.destinationViewController as
@@ -81,7 +129,9 @@ class ViewController: UIViewController, UITableViewDataSource {
       destinationVC.selectedPerson = person
     }
   }
+}
   
-  }
+
+
 
 

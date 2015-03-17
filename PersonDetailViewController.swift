@@ -65,7 +65,7 @@ class PersonDetailViewController: UIViewController, UITextFieldDelegate, UIImage
  
   
   func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-    
+//  We i update XCode it's going to make me add an ! to as for the casting of UIImage  
     let image = info[UIImagePickerControllerOriginalImage] as UIImage
     self.imageView.image = image
     self.selectedPerson.image = image
